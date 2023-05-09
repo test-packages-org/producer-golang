@@ -3,7 +3,7 @@ name: Makefile CI
 on:
   workflow_dispatch
 env:
-  REGISTRY: ghcr.io 
+  REGISTRY: "ghcr.io" 
   IMAGE_TAG: "1.0.0"
 jobs:
   build:
@@ -30,4 +30,4 @@ jobs:
       run: |
         docker build \
         --file dockerfile.producer \ 
-        --tag ${{ env.IMAGE_TAG }} .
+        --tag producer:${{ env.IMAGE_TAG }} .
