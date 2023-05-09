@@ -19,5 +19,5 @@ jobs:
     - name: "Build the image"
       run: |
         docker build \
-	--file dockerfile.producer \ 
-	--tag ${{ env.IMAGE_TAG }} .
+        --file dockerfile.producer \ 
+        --tag ${{ env.IMAGE_TAG }} .
