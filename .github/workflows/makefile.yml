@@ -7,6 +7,9 @@ jobs:
   build:
 
     runs-on: self-hosted
+    permissions:
+      contents: read
+      packages: write
 
     steps:
     - name: "Checking out the repo"
@@ -14,7 +17,7 @@ jobs:
     - uses: docker/login-action@v2
       with:
         registry: ${{ env.REGISTRY }}
-        username: ${{ github.repository_owner }}
+        username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: "Build the image"
       run: |
