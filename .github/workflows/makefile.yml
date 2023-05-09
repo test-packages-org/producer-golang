@@ -4,7 +4,7 @@ on:
   workflow_dispatch
 env:
   REGISTRY: ghcr.io
-  VERSION: "2.0.0"
+  VERSION: latest
   IMAGE_NAME: ${{ github.repository }}
 jobs:
   build:
