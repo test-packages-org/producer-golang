@@ -1,3 +1,3 @@
-module golang-producer
+module producer-golang
 
 go 1.18
