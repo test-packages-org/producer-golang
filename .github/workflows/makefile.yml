@@ -5,7 +5,7 @@ on:
 env:
   REGISTRY: ghcr.io
   VERSION: latest
-  IMAGE_NAME: test-package
+  IMAGE_NAME: testpackage
 jobs:
   build:
 
