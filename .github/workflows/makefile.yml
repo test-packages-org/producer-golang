@@ -32,7 +32,7 @@ jobs:
       run: docker build . --file dockerfile.producer --tag $IMAGE_NAME
     - name: "Push the image"
       run: |
-          IMAGE_ID=$REGISTRY/${{ github.repository_owner }}/$IMAGE_NAME
+          IMAGE_ID=$REGISTRY/$IMAGE_NAME
           echo $IMAGE_ID
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
