@@ -28,3 +28,5 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: "Build the image"
       run: docker build . --file dockerfile.producer --tag producer:${{ env.IMAGE_TAG }}
+    - name: "Push the image"
+      run: docker push producer:${{ env.IMAGE_TAG }}
