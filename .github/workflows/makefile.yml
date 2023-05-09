@@ -4,8 +4,7 @@ on:
   workflow_dispatch
 env:
   REGISTRY: ghcr.io
-  BASE_TAG: ghcr.io/${{ github.repository }}/cde
-  IMAGE_TAG: batch
+  IMAGE_NAME: ${{ github.repository }}
 jobs:
   build:
 
@@ -29,7 +28,7 @@ jobs:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: "Build the image"
-      run: docker build . --file dockerfile.producer --tag ${{ env.IMAGE_TAG }} 
+      run: docker build . --file dockerfile.producer --tag $IMAGE_NAME
     - name: "Push the image"
       run: |
           IMAGE_ID=$REGISTRY/$IMAGE_NAME
@@ -40,5 +39,5 @@ jobs:
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
           docker tag $IMAGE_NAME $IMAGE_ID
-          docker push ${{ env.IMAGE_TAG }} 
+          docker push $IMAGE_ID
 
