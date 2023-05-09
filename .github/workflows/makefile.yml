@@ -28,7 +28,7 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: "Build the image"
-      run: docker build . --file dockerfile.producer --tag $REGISTRY/$IMAGE_NAME
+      run: docker build . --file dockerfile.producer --tag $IMAGE_NAME
     - name: "Push the image"
       run: |
           IMAGE_ID=$REGISTRY/${{ github.repository_owner }}/$IMAGE_NAME
