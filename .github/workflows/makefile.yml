@@ -28,6 +28,6 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: "Build the image"
-      run: docker build . --file dockerfile.producer --tag producer-golang:${{ env.IMAGE_TAG }}
+      run: docker build . --file dockerfile.producer --tag ghcr.io/producer-golang:${{ env.IMAGE_TAG }}
     - name: "Push the image"
       run: docker push ghcr.io/producer-golang:${{ env.IMAGE_TAG }}
