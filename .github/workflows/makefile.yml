@@ -28,8 +28,10 @@ jobs:
         registry: ${{ env.REGISTRY }}
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GITHUB_TOKEN }}
+    - name: "Cat config"
+      run: cat ~/.docker/config.json        
     - name: "Build the image"
-      run: docker build . --file dockerfile.producer --tag $IMAGE_NAME
+      run: docker buildx build . --file dockerfile.producer --tag $IMAGE_NAME
     - name: "Push the image"
       run: |
           IMAGE_ID=$REGISTRY/$IMAGE_NAME
