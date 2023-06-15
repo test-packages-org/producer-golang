@@ -32,14 +32,10 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: "Cat config"
       run: cat ~/.docker/config.json
-    #- name: "auth"
-    #  run: cat ~/.docker/config.json | jq -r ' .auths."ghcr.io".auth' | base64 -d | rev
-    # - name: "Build the image"
-    #  run: docker buildx build . --file dockerfile.producer --tag $IMAGE_NAME
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
       with:
-        context: dockerfile.producer
+        context: .
         push: true
         tags: test-packages-org/producer-golang:latest
 
