@@ -39,8 +39,7 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
       with:
-        context: .
-        platforms: linux/amd64
+        context: dockerfile.producer
         push: true
-        tags: ghcr.io/test-packages-org/producer-golang:latest
+        tags: test-packages-org/producer-golang:latest
 
