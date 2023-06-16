@@ -27,5 +27,5 @@ jobs:
         context: .
         platforms: linux/amd64
         push: true
-        tags: ghcr.io/test-packages-org/something-else:latest
+        tags: ghcr.io/test-packages-org/another:latest
 
