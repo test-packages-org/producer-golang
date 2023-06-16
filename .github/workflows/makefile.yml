@@ -37,5 +37,5 @@ jobs:
       with:
         context: .
         push: true
-        tags: test-packages-org/producer-two-golang:latest
+        tags: ghcr.io/test-packages-org/something-else:latest
 
